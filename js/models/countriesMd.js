@@ -6,6 +6,14 @@ module.exports = Backbone.Model.extend({
   defaults: {
     "countries": [
       {
+        "name": "Vitalik Coin",
+        "dataName": "ETH",
+        "currency": "Ethereum",
+        "code": "ETH",
+        "number": "1",
+        "currencyUnits": "1"
+      },
+      {
         "name": "Zcash",
         "dataName": "ZCASH",
         "currency": "Zcash",

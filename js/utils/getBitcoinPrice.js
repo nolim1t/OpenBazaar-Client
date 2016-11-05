@@ -24,8 +24,8 @@ module.exports = function (currency, callback) {
   window.btcAverages = window.btcAverages || {};
 
   var getBTCPrices = function(){
-    $.get('https://shapeshift.io/rate/ZEC_BTC', function(zecrate) {
-      console.log(zecrate.rate);
+    $.get('https://shapeshift.io/rate/BTC_ETH', function(liverate) {
+      console.log(liverate.rate);
       $.ajax({
         url: app.serverConfigs.getActive().getServerBaseUrl() + '/btc_price',
         dataType: 'json',
@@ -33,7 +33,7 @@ module.exports = function (currency, callback) {
       })
         .done(function(data){
           if (!__.isEmpty(data.currencyCodes)){
-            data.currencyCodes["ZEC"] = zecrate.rate;
+            data.currencyCodes["ETH"] = liverate.rate;
             btPrices.push(data.currencyCodes);
           }
           console.log(JSON.stringify(btPrices));
