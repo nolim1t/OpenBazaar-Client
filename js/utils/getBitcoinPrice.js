@@ -24,24 +24,27 @@ module.exports = function (currency, callback) {
   window.btcAverages = window.btcAverages || {};
 
   var getBTCPrices = function(){
-    $.ajax({
-      url: app.serverConfigs.getActive().getServerBaseUrl() + '/btc_price',
-      dataType: 'json',
-      cache: false //just in case
-    })
-      .done(function(data){
-        if (!__.isEmpty(data.currencyCodes)){
-          data.currencyCodes["ZEC"] = 1.32988659;
-          btPrices.push(data.currencyCodes);
-        }
-        console.log(JSON.stringify(btPrices));
+    $.get('https://shapeshift.io/rate/ZEC_BTC', function(zecrate) {
+      console.log(zecrate.rate);
+      $.ajax({
+        url: app.serverConfigs.getActive().getServerBaseUrl() + '/btc_price',
+        dataType: 'json',
+        cache: false //just in case
       })
-      .fail(function (jqXHR, textStatus, errorThrown) {
-        logAPIErrorInfo("Call to btc_price", jqXHR, textStatus, errorThrown);
-      })
-      .always(function () {
-        makeAveragePrice();
-      });
+        .done(function(data){
+          if (!__.isEmpty(data.currencyCodes)){
+            data.currencyCodes["ZEC"] = zecrate.rate;
+            btPrices.push(data.currencyCodes);
+          }
+          console.log(JSON.stringify(btPrices));
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+          logAPIErrorInfo("Call to btc_price", jqXHR, textStatus, errorThrown);
+        })
+        .always(function () {
+          makeAveragePrice();
+        });
+    });
 
   };
 
