@@ -726,6 +726,7 @@
     "langChangeRestartTitle": "Restart needed for language change",
     "langChangeRestartMessage": "In order for your language change to fully take effect, you must restart the app.",
     "countries": {
+        "ZCASH": "Zcash (UK)",
         "AFGHANISTAN": "Afghanistan",
         "ALAND_ISLANDS": "Aland Islands",
         "ALBANIA": "Albania",

@@ -54,6 +54,8 @@ module.exports = baseVw.extend({
               self.availableCurrenciesList.push(bcaCurrency);
             }
           }
+          // ZCash: https://shapeshift.io/rate/btc_zec
+          self.availableCurrenciesList.push({"ZEC": {"last": 1.32919494}});
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
           console.log("BitcoinAverage request failed: ");
@@ -94,4 +96,3 @@ module.exports = baseVw.extend({
     }
   }
 });
-

@@ -55,6 +55,7 @@
              href="bitcoin:<%= ob.buyer_order.order.payment.address %>?amount=<%= ob.buyer_order.order.payment.amount %>&message=<%= ob.vendor_offer.listing.item.title %>">
             <i class="ion-link"></i> <%= polyglot.t('buyFlow.OpenAddress') %>
           </a>
+          <br />
           <a class="btn btn-txt btn-wide js-transactionPayCheck"><i class="ion-refresh"></i> <%= polyglot.t('buyFlow.RefreshPayment') %></a>
         </div>
       </div>

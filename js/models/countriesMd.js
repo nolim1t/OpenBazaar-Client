@@ -6,6 +6,14 @@ module.exports = Backbone.Model.extend({
   defaults: {
     "countries": [
       {
+        "name": "Zcash",
+        "dataName": "ZCASH",
+        "currency": "Zcash",
+        "code": "ZEC",
+        "number": "1",
+        "currencyUnits": "1"
+      },
+      {
         "name": "Afghanistan",
         "dataName": "AFGHANISTAN",
         "currency": "Afghani",

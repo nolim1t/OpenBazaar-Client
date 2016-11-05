@@ -596,6 +596,7 @@ module.exports = baseModal.extend({
     this.$el.find('.js-buyWizardPayQRCode').attr('src', dataURI);
     this.$el.find('.js-buyWizardPayPrice').text();
     this.$el.find('.js-buyWizardPayURL').text(data.payment_address);
+    $("#shapeshift").attr("href", "https://shapeshift.io/shifty.html?destination=" + data.payment_address + "&output=BTC&amount=" + totalBTCPrice.toString());
     this.$el.find('.js-buyWizardPayLink').attr('href', payHREF);
     this.buyDetailsView.lockForm();
   },

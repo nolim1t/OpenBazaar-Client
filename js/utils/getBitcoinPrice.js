@@ -31,8 +31,10 @@ module.exports = function (currency, callback) {
     })
       .done(function(data){
         if (!__.isEmpty(data.currencyCodes)){
+          data.currencyCodes["ZEC"] = 1.32988659;
           btPrices.push(data.currencyCodes);
         }
+        console.log(JSON.stringify(btPrices));
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
         logAPIErrorInfo("Call to btc_price", jqXHR, textStatus, errorThrown);

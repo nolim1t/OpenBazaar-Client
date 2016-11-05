@@ -730,6 +730,7 @@
 	"restartNow": "Restart Now",
 	"restartLater": "Restart Later",
   "countries": {
+    "ZCASH": "Zcash (US)",
     "AFGHANISTAN": "Afghanistan",
     "ALAND_ISLANDS": "Aland Islands",
     "ALBANIA": "Albania",
